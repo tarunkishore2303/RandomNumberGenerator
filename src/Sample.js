@@ -3,7 +3,7 @@ import React from 'react'
 function Sample() {
     return (
         <div>
-            <h4>haaaaaaaaaaaaai</h4>
+            <h4>This is a text from Sample.js</h4>
         </div>
     )
 }

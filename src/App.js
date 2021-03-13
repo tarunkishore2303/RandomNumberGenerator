@@ -1,34 +1,36 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import Sample from './Sample.js'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
+const App= () => {
   
-    this.state = {
-       num:1
-    }
+  // Using hooks
+  const [state, setstate] = useState(1)
+
+  function randomNumber()
+  {
+    let random = Math.floor(Math.random() * 10) + 1;
+    setstate(random)
+
+  }
+  
+  function restart()
+  {
+    setstate(1)
+  }
+  return (
+    <div className="App">
+      <h1>Number:{state}</h1>
+      {state === 5 
+        ? <div><h2>You Win !</h2><button onClick={()=>{restart()}}>Reset</button></div>
+        : <button onClick={()=>{randomNumber()}}>Click Me !!!</button>    
+      }
+      <Sample/>
+          
+    </div>
+  )
   }
 
-  randomNumber(){
-    let random = Math.floor(Math.random() * 10) + 1
-    this.setState({num:random})
-  }
-  
-  render() {
-    return (
-      <div className="App">
-        <h1>Number:{this.state.num}</h1>
-        {this.state.num === 7 
-          ? <div><h2>You Win !</h2><button>Reset</button></div>
-          : <button onClick={()=>{this.randomNumber()}}>Click Me !!!</button>    
-        }
-        <Sample/>
-            
-      </div>
-    )
-  }
-}
+
 
 export default App
