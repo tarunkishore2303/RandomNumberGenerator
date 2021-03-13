@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import Sample from './Sample.js'
 
 class App extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class App extends Component {
           ? <div><h2>You Win !</h2><button>Reset</button></div>
           : <button onClick={()=>{this.randomNumber()}}>Click Me !!!</button>    
         }
+        <Sample/>
             
       </div>
     )
